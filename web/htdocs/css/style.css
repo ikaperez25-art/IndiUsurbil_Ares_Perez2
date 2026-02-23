@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+/* Estilo oinarrizkoak eta garbiak */
+:root {
+    --bg-nagusia: #0f172a;
+    --txartela-bg: #1e293b;
+    --testu-zuria: #f8fafc;
+    --testu-urdina: #94a3b8;
+    --kolore-nabarmena: #6366f1;
+    --kolore-nabarmena-hover: #4f46e5;
+    --gorria: #ef4444;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,340 +18,240 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f7f4;
-    line-height: 1.6;
-    color: #333333;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-nagusia);
+    color: var(--testu-zuria);
+    line-height: 1.5;
 }
 
+/* Nabigazioa */
 header {
-    background: linear-gradient(#000049, rgb(47, 13, 133));
-    margin: 0 auto;
-    padding: 15px 30px;
-    position: relative;
+    background-color: #1e293b;
+    padding: 1rem;
+    border-bottom: 2px solid #334155;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 2000px;
-    margin: auto;
-    position: relative;
-}
-
-header {
-    border-bottom: 1px solid #d9d9d9;
-}
-
-.menu-hamburguesa {
-    display: none;
-    position: absolute;
-}
-
-
-details {
-    margin-left: auto;
-    margin-right: 0;
-    position: static;
-}
-
-summary {
-    list-style: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 18px;
-    color: #ffffff;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-summary::-webkit-details-marker {
-    display: none;
-}
-
-summary::before {
-    content: '\2630';
-    font-size: 24px;
-}
-
-details[open] summary::before {
-    content: '\2715';
-}
-
-
-.menu {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -30%;
-    margin-top: 20px;
-    text-align: center;
-    border-radius: 8px;
-    padding: 0px;
-    width: max-content;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-
-}
-
-.menu ul {
-    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-.menu li {
-    list-style: none;
-}
-
-.menu li a {
+.logo-textua {
+    font-size: 1.8rem;
+    font-weight: 700;
     text-decoration: none;
-    color: #ffffff;
-    padding: 12px 20px;
-    display: block;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    font-size: 18px;
+    color: var(--testu-zuria);
+    letter-spacing: -1px;
 }
 
-.menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.logo-textua:hover {
+    color: var(--kolore-nabarmena);
 }
 
-.logo img {
-    height: 60px;
-    transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-    transform: scale(1.1);
-}
-
-.carrito {
+.menua {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-left: 20px;
+    list-style: none;
+    gap: 1.5rem;
 }
 
-.carrito img {
-    width: 32px;
-    height: 32px;
+.menua a {
+    text-decoration: none;
+    color: var(--testu-urdina);
+    font-weight: bold;
 }
 
-
-
-
-.main {
-    background: linear-gradient(#000049, rgb(47, 13, 133));
+.menua a:hover {
+    color: var(--testu-zuria);
 }
 
+.saski-esteka {
+    position: relative;
+    display: flex;
+}
 
+.saskia-ikonoa {
+    width: 24px;
+    filter: invert(1);
+}
 
-.footer {
-    background: linear-gradient(#000049, rgb(47, 13, 133));
-    padding: 40px 30px;
-    border-top: 1px solid #444444;
-    color: #cccccc;
+#saski-kontagailua {
+    background-color: var(--gorria);
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+/* Hero atala */
+.hero-atala {
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: #111827;
+}
+
+.hero-edukia {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-atala h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-atala p {
+    color: var(--testu-urdina);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-botoia {
+    padding: 0.8rem 2rem;
+    background-color: var(--kolore-nabarmena);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Produktuen grid-a */
+.produktu-nabarmenduak {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.atal-izenburua {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.produktu-sareta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Produktu txartela */
+.produktu-txartela {
+    background-color: var(--txartela-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #334155;
+}
+
+.produktu-irudia {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.produktu-irudia img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.produktu-izenburua {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+}
+
+.produktu-info {
+    padding: 0.5rem 0;
+}
+
+.produktu-oina {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 1rem;
 }
 
-.oharlegalak {
+.produktu-prezioa {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.saskira-gehitu {
+    background-color: var(--kolore-nabarmena);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #1e293b;
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+    border-top: 2px solid #334155;
+}
+
+.oin-edukia {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.oharlegalak a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.oharlegalak a:hover {
-    color: #f0f0f0;
-    text-decoration: underline;
-}
-
-.logos ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
-}
-
-.logos img {
-    height: 30px;
-}
-
-.logos a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    border: 1px solid #555555;
-}
-
-.cesta {
-    width: 5vh;
-    display: flex;
-}
-
-#cuenta-carrito {
-    background-color: rgb(255, 234, 0);
-    padding: 0px 1.2vh;
-    border-radius: 100%;
-    font-size: large;
-    display: flex;
-    position: absolute;
-    top: 50%;
-    right: -0.6%;
-    color: #000049;
-
-}
-
-.logos a:hover {
-    transform: scale(1.1);
-}
-
-/* Produktuen sareta */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 30px;
-    max-width: 1400px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Erantzunkorra - Tableta */
-@media (max-width: 1024px) {
-    .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-        padding: 20px;
-    }
-
-    .footer {
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    .oharlegalak {
-        min-width: 140px;
-        text-align: center;
-    }
+.oin-atala h4 {
+    margin-bottom: 1rem;
 }
 
-/* Erantzunkorra - Mugikorra */
-@media (max-width: 768px) {
-    .menu-principal {
+.oin-atala ul {
+    list-style: none;
+}
+
+.oin-atala a {
+    color: var(--testu-urdina);
+    text-decoration: none;
+}
+
+.sare-sozialak-sareta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.sare-sozialak-sareta img {
+    width: 24px;
+    height: 24px;
+    filter: invert(0.8);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.sare-sozialak-sareta img:hover {
+    transform: scale(1.1);
+    filter: invert(1);
+}
+
+.oin-behea {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--testu-urdina);
+    font-size: 0.8rem;
+}
+
+/* Mugikorra */
+@media (max-width: 600px) {
+    .menua {
         display: none;
-    }
-
-    .menu-hamburguesa {
-        display: block;
-    }
-
-    details {
-        margin-right: 0;
-    }
-
-    .menu {
-        left: 0;
-        right: 0;
-        padding: 15px 0;
-        transform: translateX(150%);
-        display: block;
-        background: linear-gradient(#000049, rgb(47, 13, 133));
-    }
-
-    .menu ul {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .menu li {
-        width: 90%;
-        max-width: 300px;
-    }
-
-    .menu li a {
-        padding: 15px;
-        font-size: 16px;
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        padding: 15px;
-    }
-
-    .logo img {
-        height: 45px;
-    }
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-        padding: 30px 20px;
-    }
-
-    nav {
-        padding: 0 15px;
-    }
-
-    .logos ul {
-        justify-content: center;
-    }
-
-    header {
-        padding: 10px 15px;
-    }
-}
-
-/* Erantzunkorra - Mugikor txikia */
-@media (max-width: 480px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 10px;
-    }
-
-    .logo img {
-        height: 36px;
-    }
-
-    .cesta {
-        width: 4vh;
-    }
-
-    #cuenta-carrito {
-        font-size: small;
-        padding: 0px 1vh;
-    }
-
-    .footer {
-        padding: 20px 15px;
-        margin-top: 40px;
-    }
-
-    .oharlegalak a {
-        font-size: 12px;
     }
 }

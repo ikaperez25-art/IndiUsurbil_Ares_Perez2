@@ -1,84 +1,90 @@
-const contenedorTarjetas = document.getElementById("cart-container");
+const saskiEdukiontzia = document.getElementById("saski-edukiontzia");
 
 function crearTarjetasProductosCarrito() {
-    contenedorTarjetas.innerHTML = "";
-    const productos = JSON.parse(localStorage.getItem("saskia")) || [];
+    saskiEdukiontzia.innerHTML = "";
+    const produktuak = JSON.parse(localStorage.getItem("saskia")) || [];
 
-    if (productos && productos.length > 0) {
-        productos.forEach((producto) => {
-            const nuevaBicicleta = document.createElement("div");
-            nuevaBicicleta.innerHTML = `
-                <img src="${producto.image}" width="50">
-                <span>${producto.title}</span>
-                <span>${producto.price}€</span>
-                <div>
-                    <button>-</button>
-                    <span class="cantidad">${producto.cantidad}</span>
-                    <button>+</button>
+    if (produktuak && produktuak.length > 0) {
+        produktuak.forEach((produktua) => {
+            const txartelBerria = document.createElement("div");
+            txartelBerria.classList.add("produktu-txartela");
+            txartelBerria.innerHTML = `
+                <div class="produktu-irudia">
+                    <img src="${produktua.image}" alt="${produktua.title}">
+                </div>
+                <div class="produktu-info">
+                    <h3 class="produktu-izenburua">${produktua.title}</h3>
+                    <div class="produktu-oina">
+                        <span class="produktu-prezioa">${produktua.price.toFixed(2)}€</span>
+                        <div>
+                            <button>-</button>
+                            <span class="kopurua-testua">${produktua.cantidad}</span>
+                            <button>+</button>
+                        </div>
+                    </div>
                 </div>
             `;
-            contenedorTarjetas.appendChild(nuevaBicicleta);
+            saskiEdukiontzia.appendChild(txartelBerria);
 
-            nuevaBicicleta.getElementsByTagName("button")[0].addEventListener("click", (e) => {
-                restarAlCarrito(producto);
+            txartelBerria.getElementsByTagName("button")[0].addEventListener("click", (e) => {
+                restarAlCarrito(produktua);
                 crearTarjetasProductosCarrito();
                 actualizarTotales();
             });
 
-            nuevaBicicleta.getElementsByTagName("button")[1].addEventListener("click", (e) => {
-                agregarAlCarrito(producto);
+            txartelBerria.getElementsByTagName("button")[1].addEventListener("click", (e) => {
+                agregarAlCarrito(produktua);
                 crearTarjetasProductosCarrito();
                 actualizarTotales();
             });
         });
     } else {
-        contenedorTarjetas.innerHTML = "<p>Saskia hutsik</p>";
+        saskiEdukiontzia.innerHTML = "<p>Saskia hutsik</p>";
     }
     actualizarTotales();
     actualizarNumeroCarrito();
 }
 
 function actualizarTotales() {
-    const productos = JSON.parse(localStorage.getItem("saskia")) || [];
-    let cantidad = 0;
-    let precio = 0;
+    const produktuak = JSON.parse(localStorage.getItem("saskia")) || [];
+    let kopurua = 0;
+    let prezioa = 0;
 
-    if (productos && productos.length > 0) {
-        productos.forEach((producto) => {
-            cantidad += producto.cantidad;
-            precio += producto.price * producto.cantidad;
+    if (produktuak && produktuak.length > 0) {
+        produktuak.forEach((produktua) => {
+            kopurua += produktua.cantidad;
+            prezioa += produktua.price * produktua.cantidad;
         });
     }
 
-    const totalesContainer = document.getElementById("totales");
-    if (totalesContainer) {
-        totalesContainer.innerHTML = `
-            <div>Unitateak guztira: ${cantidad}</div>
-            <div>Prezio totala: ${precio.toFixed(2)}€</div>
-            <button id="reiniciar">Saskia hustu</button>
-            <button id="comprar"> erosi</button>
+    const guztizkoenEdukiontzia = document.getElementById("guztizkoak");
+    if (guztizkoenEdukiontzia) {
+        guztizkoenEdukiontzia.innerHTML = `
+            <div>Unitateak guztira: ${kopurua}</div>
+            <div>Prezio totala: ${prezioa.toFixed(2)}€</div>
+            <button id="saskia-hustu">Saskia hustu</button>
+            <button id="erosi-botoia">Erosi</button>
         `;
 
-        const btnReiniciar = document.getElementById("reiniciar");
-        if (btnReiniciar) {
-            btnReiniciar.addEventListener("click", () => {
+        const btnHustu = document.getElementById("saskia-hustu");
+        if (btnHustu) {
+            btnHustu.addEventListener("click", () => {
                 localStorage.removeItem("saskia");
                 crearTarjetasProductosCarrito();
                 actualizarTotales();
             });
         }
-        const btnComprar = document.getElementById("comprar");
-btnComprar.onclick = function(){
-alert("erosketa eginda")
-localStorage.removeItem("saskia");
+        const btnErosi = document.getElementById("erosi-botoia");
+        if (btnErosi) {
+            btnErosi.onclick = function () {
+                alert("Erosketa eginda!");
+                localStorage.removeItem("saskia");
                 crearTarjetasProductosCarrito();
                 actualizarTotales();
-}
+            }
+        }
     }
 }
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     crearTarjetasProductosCarrito();
