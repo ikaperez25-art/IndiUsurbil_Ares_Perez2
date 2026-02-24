@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "izena": "Kamiseta Berdea",
+        "deskribapena": "Algodoi organikozko kamiseta",
+        "prezioa": 29.99,
+        "stocka": 50,
+        "irudia": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400",
+        "kategoria": "Kamisetak"
+    },
+    {
+        "id": 2,
+        "izena": "Kamiseta Beltza",
+        "deskribapena": "Kamiseta unisex beltza",
+        "prezioa": 24.99,
+        "stocka": 35,
+        "irudia": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=400",
+        "kategoria": "Kamisetak"
+    },
+    {
+        "id": 3,
+        "izena": "Praka Urdina",
+        "deskribapena": "Denim jasangarria",
+        "prezioa": 59.99,
+        "stocka": 30,
+        "irudia": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400",
+        "kategoria": "Prakak"
+    },
+    {
+        "id": 4,
+        "izena": "Praka Grisa",
+        "deskribapena": "Praka erosoa",
+        "prezioa": 49.99,
+        "stocka": 20,
+        "irudia": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400",
+        "kategoria": "Prakak"
+    },
+    {
+        "id": 5,
+        "izena": "Alkandora Zuria",
+        "deskribapena": "Alkandora elegantea",
+        "prezioa": 45.99,
+        "stocka": 25,
+        "irudia": "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=400",
+        "kategoria": "Alkandorak"
+    },
+    {
+        "id": 6,
+        "izena": "Sudadera Gorria",
+        "deskribapena": "Sudadera beroa",
+        "prezioa": 39.99,
+        "stocka": 40,
+        "irudia": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400",
+        "kategoria": "Sudaderak"
+    },
+    {
+        "id": 7,
+        "izena": "Jaka Beltza",
+        "deskribapena": "Jaka arina",
+        "prezioa": 89.99,
+        "stocka": 15,
+        "irudia": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400",
+        "kategoria": "Jakak"
+    }
+]
