@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+/* Oinarrizko aldagaiak (style.css-ko berdinak) */
+:root {
+    --bg-nagusia: #0f172a;
+    --txartela-bg: #1e293b;
+    --testu-zuria: #f8fafc;
+    --testu-urdina: #94a3b8;
+    --kolore-nabarmena: #6366f1;
+    --kolore-nabarmena-hover: #4f46e5;
+    --gorria: #ef4444;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,356 +18,182 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f7f4;
-    line-height: 1.6;
-    color: #333333;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-nagusia);
+    color: var(--testu-zuria);
+    line-height: 1.5;
 }
 
-header {
-    background: linear-gradient(#000049, rgb(47, 13, 133));
-    margin: 0 auto;
-    padding: 15px 30px;
-    position: relative;
+/* Saskiaren edukiontzia */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 2000px;
-    margin: auto;
-    position: relative;
-}
-
-header {
-    border-bottom: 1px solid #d9d9d9;
-}
-
-.menu-hamburguesa {
-    display: none;
-    position: absolute;
-}
-
-
-details {
-    margin-left: auto;
-    margin-right: 0;
-    position: static;
-}
-
-summary {
-    list-style: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 18px;
-    color: #ffffff;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-summary::-webkit-details-marker {
-    display: none;
-}
-
-summary::before {
-    content: '\2630';
-    font-size: 24px;
-}
-
-details[open] summary::before {
-    content: '\2715';
-}
-
-
-.menu {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -30%;
-    margin-top: 20px;
+main h1 {
     text-align: center;
-    border-radius: 8px;
-    padding: 0px;
-    width: max-content;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-
+    margin-bottom: 2rem;
+    font-size: 2rem;
 }
 
-.menu ul {
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.menu li {
-    list-style: none;
-}
-
-.menu li a {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 12px 20px;
-    display: block;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    font-size: 18px;
-}
-
-.menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.logo img {
-    height: 60px;
-    transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-    transform: scale(1.1);
-}
-
-.carrito {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-left: 20px;
-}
-
-.carrito img {
-    width: 32px;
-    height: 32px;
-}
-
-
-
-
-
-#totales {
-    text-align: center;
-    margin-top: 5vh;
-}
-
-main,
-h1 {
-    text-align: center;
-    margin-top: 5vh;
-}
-
-#cart-container {
-    max-width: 50vh;
-    margin: 0 auto;
-    padding: 20px;
-
-}
-
-#cart-container img {
-    width: 10vh;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-
-button {
-    background: linear-gradient(#000049, rgb(47, 13, 133));
-    color: white;
-    padding: 1vh;
-    margin: 2vh;
-    justify-content: right;
-}
-
-
-
-.footer {
-    background: linear-gradient(#000049, rgb(47, 13, 133));
-    padding: 40px 30px;
-    border-top: 1px solid #444444;
-    color: #cccccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 80px;
-}
-
-.oharlegalak {
+#saski-edukiontzia {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 1.5rem;
 }
 
-.oharlegalak a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.oharlegalak a:hover {
-    color: #f0f0f0;
-    text-decoration: underline;
-}
-
-.logos ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
-}
-
-.logos img {
-    height: 30px;
-}
-
-.logos a {
+/* Produktu txartela saskian (Zerrenda moduan) */
+#saski-edukiontzia .produktu-txartela {
+    background-color: var(--txartela-bg);
+    border-radius: 8px;
+    padding: 1rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    justify-content: space-between;
+    border: 1px solid #334155;
+    gap: 1rem;
+}
+
+#saski-edukiontzia .produktu-irudia {
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100px;
+    height: 100px;
+}
+
+#saski-edukiontzia .produktu-irudia img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#saski-edukiontzia .produktu-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+#saski-edukiontzia .produktu-izenburua {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+#saski-edukiontzia .produktu-oina {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.kopurua-kontrola {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #0f172a;
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+.kopurua-kontrola button {
+    background: transparent;
+    border: none;
+    color: var(--kolore-nabarmena);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.kopurua-kontrola span {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Guztizkoak eta Botoiak */
+#guztizkoak {
+    margin-top: 3rem;
+    background-color: var(--txartela-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    text-align: right;
+}
+
+#guztizkoak div {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--testu-urdina);
+}
+
+#guztizkoak div:last-of-type {
+    font-size: 1.8rem;
+    color: var(--testu-zuria);
+    font-weight: 700;
+}
+
+.saski-botoiak {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+#saskia-hustu,
+#erosi-botoia {
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
     transition: all 0.3s ease;
-    border: 1px solid #555555;
 }
 
-.cesta {
-    width: 5vh;
-    display: flex;
+#saskia-hustu {
+    background-color: transparent;
+    border: 1px solid var(--gorria);
+    color: var(--gorria);
 }
 
-#cuenta-carrito {
-    background-color: rgb(255, 234, 0);
-    padding: 0px 1.2vh;
-    border-radius: 100%;
-    display: flex;
-    position: absolute;
-    top: 50%;
-    right: -0.6%;
-    color: #000049;
-
+#saskia-hustu:hover {
+    background-color: var(--gorria);
+    color: white;
 }
 
-.logos a:hover {
-    transform: scale(1.1);
+#erosi-botoia {
+    background-color: var(--kolore-nabarmena);
+    color: white;
 }
 
-/* Erantzunkorra - Mugikorra */
-@media (max-width: 768px) {
-    .menu-principal {
-        display: none;
-    }
+#erosi-botoia:hover {
+    background-color: var(--kolore-nabarmena-hover);
+    transform: translateY(-2px);
+}
 
-    .menu-hamburguesa {
-        display: block;
-    }
+/* Mezuak */
+.mezua-hutsik {
+    text-align: center;
+    padding: 4rem;
+    color: var(--testu-urdina);
+    font-size: 1.2rem;
+}
 
-    details {
-        margin-right: 0;
-    }
-
-    .menu {
-        left: 0;
-        right: 0;
-        padding: 15px 0;
-        transform: translateX(150%);
-        display: block;
-        background: linear-gradient(#000049, rgb(47, 13, 133));
-    }
-
-    .menu ul {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .menu li {
-        width: 90%;
-        max-width: 300px;
-    }
-
-    .menu li a {
-        padding: 15px;
-        font-size: 16px;
-    }
-
-    #cart-container {
-        max-width: 100%;
-        padding: 15px;
-    }
-
-    .logo img {
-        height: 45px;
-    }
-
-    .footer {
+/* Erantzunkorra */
+@media (max-width: 600px) {
+    #saski-edukiontzia .produktu-txartela {
         flex-direction: column;
         text-align: center;
-        gap: 25px;
-        padding: 30px 20px;
     }
 
-    nav {
-        padding: 0 15px;
+    #saski-edukiontzia .produktu-info {
+        text-align: center;
     }
 
-    .logos ul {
-        justify-content: center;
+    #saski-edukiontzia .produktu-oina {
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    header {
-        padding: 10px 15px;
-    }
-}
-
-/* Erantzunkorra - Mugikor txikia */
-@media (max-width: 480px) {
-    .logo img {
-        height: 36px;
-    }
-
-    .cesta {
-        width: 4vh;
-    }
-
-    #cuenta-carrito {
-        font-size: small;
-        padding: 0px 1vh;
-    }
-
-    main,
-    h1 {
-        margin-top: 3vh;
-    }
-
-    h1 {
-        font-size: 1.3rem;
-    }
-
-    #cart-container {
-        padding: 10px;
-    }
-
-    #cart-container img {
-        width: 8vh;
-    }
-
-    button {
-        padding: 0.8vh;
-        margin: 1vh;
-        font-size: 14px;
-    }
-
-    .footer {
-        padding: 20px 15px;
-        margin-top: 40px;
-    }
-
-    .oharlegalak a {
-        font-size: 12px;
+    .saski-botoiak {
+        flex-direction: column;
     }
 }
