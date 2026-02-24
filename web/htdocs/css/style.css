@@ -184,6 +184,15 @@ nav {
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    background-image: url('img/placeholder.png');
+    /* Fallback image if exists */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .produktu-irudia img {
