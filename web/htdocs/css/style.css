@@ -129,6 +129,36 @@ nav {
     margin: 0 auto;
 }
 
+.filtro-edukiontzia {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filtro-botoia {
+    background-color: transparent;
+    border: 1px solid var(--txartela-bg);
+    color: var(--testu-urdina);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filtro-botoia:hover {
+    border-color: var(--kolore-nabarmena);
+    color: var(--testu-zuria);
+}
+
+.filtro-botoia.aktiboa {
+    background-color: var(--kolore-nabarmena);
+    border-color: var(--kolore-nabarmena);
+    color: white;
+}
+
 .atal-izenburua {
     text-align: center;
     margin-bottom: 2rem;
