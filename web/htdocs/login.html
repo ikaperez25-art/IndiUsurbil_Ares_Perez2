@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .login-atala {
+            max-width: 400px;
+            margin: 4rem auto;
+            background-color: var(--txartela-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-atala h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .input-taldea {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-taldea label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--testu-urdina);
+            font-size: 0.9rem;
+        }
+
+        .input-taldea input {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 4px;
+            color: white;
+            font-family: inherit;
+        }
+
+        .input-taldea input:focus {
+            outline: none;
+            border-color: var(--kolore-nabarmena);
+        }
+
+        .login-botoia {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--kolore-nabarmena);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .login-botoia:hover {
+            background-color: var(--kolore-nabarmena-hover);
+        }
+
+        #login-mezua {
+            margin-top: 1.5rem;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 4px;
+            display: none;
+            font-weight: bold;
+        }
+
+        .success {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            display: block !important;
+        }
+
+        .error {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            display: block !important;
+        }
+    </style>
+    <title>Login - IndiUsurbil</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" class="logo-textua">IndiUsurbil</a>
+            </div>
+            <ul class="menua">
+                <li><a href="index.html">Hasiera</a></li>
+                <li><a href="produktuak.html">Produktuak</a></li>
+                <li><a href="#">Estadistikak</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-atala">
+            <h2>Saioa Hasi</h2>
+            <form id="login-form">
+                <div class="input-taldea">
+                    <label for="erabiltzailea">Erabiltzailea</label>
+                    <input type="text" id="erabiltzailea" required placeholder="Zure erabiltzailea">
+                </div>
+                <div class="input-taldea">
+                    <label for="pasahitza">Pasahitza</label>
+                    <input type="password" id="pasahitza" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="login-botoia">Sartu</button>
+            </form>
+            <div id="login-mezua"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="oin-behea">
+            <p>&copy; 2026 Indiusurbil. Eskubide guztiak erreserbatuta.</p>
+        </div>
+    </footer>
+
+    <script src="js/cartService.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const user = document.getElementById('erabiltzailea').value;
+            const pass = document.getElementById('pasahitza').value;
+            const mezuaDiv = document.getElementById('login-mezua');
+
+            // Logika basikoa (adibidez: admin / admin)
+            if (user === "admin" && pass === "admin") {
+                mezuaDiv.innerText = "Logina ondo egin da! Kaixo " + user;
+                mezuaDiv.className = "success";
+            } else {
+                mezuaDiv.innerText = "Logina gaizki egin da. Erabiltzaile edo pasahitz okerra.";
+                mezuaDiv.className = "error";
+            }
+        });
+
+        // Saskiaren zenbakia eguneratu (header-ean egonez gero)
+        if (typeof actualizarNumeroCarrito === 'function') {
+            actualizarNumeroCarrito();
+        }
+    </script>
+</body>
+
+</html>
