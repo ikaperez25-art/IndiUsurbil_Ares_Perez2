@@ -1,26 +1,19 @@
 let produktuak = [];
 
-// API-tik datuak hartu
-fetch("https://fakestoreapi.com/products")
+// JSON lokaletik datuak hartu (datu basetik esportatutakoak)
+fetch("json/produktuak.json")
     .then(res => res.json())
     .then(data => {
         produktuak = data;
         erakutsi(produktuak);
     });
 
-// Filtro funtzioa (Hitz gako sinpleak erabiliz akatsak ekiditeko)
+// Filtro funtzioa
 function filtratu(mota) {
     if (mota === 'all') {
         erakutsi(produktuak);
     } else {
-        // API-ko kategoria konplikatuak hitz sinpleekin lotu
-        let kategoriaMapatua = "";
-        if (mota === 'man') kategoriaMapatua = "men's clothing";
-        if (mota === 'woman') kategoriaMapatua = "women's clothing";
-        if (mota === 'elec') kategoriaMapatua = "electronics";
-        if (mota === 'jewel') kategoriaMapatua = "jewelery";
-
-        const filtratuak = produktuak.filter(p => p.category === kategoriaMapatua);
+        const filtratuak = produktuak.filter(p => p.kategoria.toLowerCase() === mota.toLowerCase());
         erakutsi(filtratuak);
     }
 }
@@ -32,10 +25,16 @@ function erakutsi(lista) {
     lista.forEach(p => {
         div.innerHTML += `
             <div class="produktu-txartela">
-                <img src="${p.image}" width="100">
-                <h3>${p.title}</h3>
-                <p><b>${p.price}€</b></p>
-                <button onclick="saskira(${p.id})">Saskira</button>
+                <div class="produktu-irudia">
+                    <img src="${p.irudia}" alt="${p.izena}">
+                </div>
+                <div class="produktu-info">
+                    <h3 class="produktu-izenburua">${p.izena}</h3>
+                    <div class="produktu-oina">
+                        <span class="produktu-prezioa">${p.prezioa.toFixed(2)}€</span>
+                        <button class="saskira-gehitu" onclick="saskira(${p.id})">+ Gehitu</button>
+                    </div>
+                </div>
             </div>
         `;
     });
