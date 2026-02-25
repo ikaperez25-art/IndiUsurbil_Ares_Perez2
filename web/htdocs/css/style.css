@@ -1,16 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* Estilo oinarrizkoak eta garbiak */
-:root {
-    --bg-nagusia: #0f172a;
-    --txartela-bg: #1e293b;
-    --testu-zuria: #f8fafc;
-    --testu-urdina: #94a3b8;
-    --kolore-nabarmena: #6366f1;
-    --kolore-nabarmena-hover: #4f46e5;
-    --gorria: #ef4444;
-}
-
+/* Estilo oinarrizkoak */
 * {
     margin: 0;
     padding: 0;
@@ -18,37 +8,31 @@
 }
 
 body {
-    font-family: 'Outfit', sans-serif;
-    background-color: var(--bg-nagusia);
-    color: var(--testu-zuria);
-    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
 }
 
 /* Nabigazioa */
 header {
     background-color: #1e293b;
     padding: 1rem;
-    border-bottom: 2px solid #334155;
+    border-bottom: 1px solid #334155;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .logo-textua {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: bold;
     text-decoration: none;
-    color: var(--testu-zuria);
-    letter-spacing: -1px;
-}
-
-.logo-textua:hover {
-    color: var(--kolore-nabarmena);
+    color: white;
 }
 
 .menua {
@@ -59,12 +43,11 @@ nav {
 
 .menua a {
     text-decoration: none;
-    color: var(--testu-urdina);
-    font-weight: bold;
+    color: #94a3b8;
 }
 
 .menua a:hover {
-    color: var(--testu-zuria);
+    color: white;
 }
 
 .saski-esteka {
@@ -78,7 +61,7 @@ nav {
 }
 
 #saski-kontagailua {
-    background-color: var(--gorria);
+    background-color: #ef4444;
     color: white;
     font-size: 0.75rem;
     padding: 2px 6px;
@@ -90,89 +73,76 @@ nav {
 
 /* Hero atala */
 .hero-atala {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
     text-align: center;
     background-color: #111827;
 }
 
 .hero-edukia {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
 .hero-atala h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 .hero-atala p {
-    color: var(--testu-urdina);
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
 }
 
 .hero-botoia {
-    padding: 0.8rem 2rem;
-    background-color: var(--kolore-nabarmena);
+    padding: 0.7rem 1.5rem;
+    background-color: #6366f1;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 4px;
 }
 
-/* Produktuen grid-a */
+/* Produktuak */
 .produktu-nabarmenduak {
-    padding: 3rem 1rem;
-    max-width: 1200px;
+    padding: 2rem 1rem;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .filtro-edukiontzia {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
 }
 
-.filtro-botoia {
-    background-color: transparent;
-    border: 1px solid var(--txartela-bg);
-    color: var(--testu-urdina);
-    padding: 0.6rem 1.5rem;
-    border-radius: 50px;
+.filtro-edukiontzia button {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
 }
 
-.filtro-botoia:hover {
-    border-color: var(--kolore-nabarmena);
-    color: var(--testu-zuria);
-}
-
-.filtro-botoia.aktiboa {
-    background-color: var(--kolore-nabarmena);
-    border-color: var(--kolore-nabarmena);
+.filtro-edukiontzia button:hover {
     color: white;
 }
 
 .atal-izenburua {
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 .produktu-sareta {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
 }
 
 /* Produktu txartela */
 .produktu-txartela {
-    background-color: var(--txartela-bg);
+    background-color: #1e293b;
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
@@ -184,15 +154,10 @@ nav {
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 1rem;
+    min-height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 150px;
-    background-image: url('img/placeholder.png');
-    /* Fallback image if exists */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 .produktu-irudia img {
@@ -204,8 +169,6 @@ nav {
 .produktu-izenburua {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    height: 2.5rem;
-    overflow: hidden;
 }
 
 .produktu-info {
@@ -216,19 +179,18 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .produktu-prezioa {
     font-weight: bold;
-    font-size: 1.1rem;
 }
 
 .saskira-gehitu {
-    background-color: var(--kolore-nabarmena);
+    background-color: #6366f1;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -236,9 +198,9 @@ nav {
 /* Footer */
 footer {
     background-color: #1e293b;
-    padding: 3rem 1rem;
-    margin-top: 4rem;
-    border-top: 2px solid #334155;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid #334155;
 }
 
 .oin-edukia {
@@ -246,20 +208,24 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .oin-atala h4 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .oin-atala ul {
     list-style: none;
 }
 
+.oin-atala li {
+    color: #94a3b8;
+}
+
 .oin-atala a {
-    color: var(--testu-urdina);
+    color: #94a3b8;
     text-decoration: none;
 }
 
@@ -272,19 +238,13 @@ footer {
 .sare-sozialak-sareta img {
     width: 24px;
     height: 24px;
-    filter: invert(0.8);
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.sare-sozialak-sareta img:hover {
-    transform: scale(1.1);
-    filter: invert(1);
+    filter: invert(0.7);
 }
 
 .oin-behea {
     text-align: center;
-    margin-top: 2rem;
-    color: var(--testu-urdina);
+    margin-top: 1.5rem;
+    color: #94a3b8;
     font-size: 0.8rem;
 }
 

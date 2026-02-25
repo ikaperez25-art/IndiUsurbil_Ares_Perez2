@@ -166,4 +166,31 @@ public class DatuBasea {
             System.out.println("Errorea: " + e.getMessage());
         }
     }
+
+    // Irudiak eguneratu (URL-ekin)
+    public static void irudiakEguneratu() {
+        String[][] irudiak = {
+                { "1", "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400" },
+                { "2", "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=400" },
+                { "3", "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400" },
+                { "4", "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400" },
+                { "5", "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=400" },
+                { "6", "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400" },
+                { "7", "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400" }
+        };
+        try {
+            Connection con = Konexioa.getKonexioa();
+            for (String[] irudi : irudiak) {
+                PreparedStatement pst = con.prepareStatement("UPDATE produktuak SET irudia=? WHERE id=?");
+                pst.setString(1, irudi[1]);
+                pst.setInt(2, Integer.parseInt(irudi[0]));
+                pst.executeUpdate();
+                pst.close();
+            }
+            System.out.println("Irudiak eguneratuta!");
+            con.close();
+        } catch (SQLException e) {
+            System.out.println("Errorea: " + e.getMessage());
+        }
+    }
 }

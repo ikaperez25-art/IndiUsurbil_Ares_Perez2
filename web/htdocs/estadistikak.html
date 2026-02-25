@@ -5,9 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Ares Perez" />
-    <meta name="description" content="IndiUsurbil - Moda jasangarria eta digitalizatua" />
+    <meta name="description" content="IndiUsurbil - Salmenten estadistikak" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>IndiUsurbil</title>
+    <link rel="stylesheet" href="css/estadistikak.css" />
+    <title>Estadistikak - IndiUsurbil</title>
 </head>
 
 <body>
@@ -33,24 +34,55 @@
     <script src="js/cartService.js"></script>
 
     <main>
-        <section class="hero-atala">
-            <div class="hero-edukia">
-                <h1>Etorkizuna janzten dugu</h1>
-                <p>Ezagutu gure bilduma berria. Jasangarritasuna eta estiloa elkartzen diren lekua. Kalitatezko arropa,
-                    zuretzat eta planetarentzat diseinatua.</p>
-                <a href="#produktu-edukiontzia" class="hero-botoia">Ikusi Katalogoa</a>
+        <h1 class="atal-izenburua">Estadistikak</h1>
+
+        <div class="estadistikak-atala">
+
+            <!-- Irabazi totala -->
+            <div class="stat-txartela">
+                <h3>Irabazi Guztizkoak</h3>
+                <div class="stat-zenbakia" id="irabazi-totala">0.00€</div>
             </div>
-        </section>
 
-        <section class="produktu-nabarmenduak">
-            <h2 class="atal-izenburua">Produktu Nabarmenduak</h2>
+            <!-- Stock baxua -->
+            <div class="stat-txartela">
+                <h3>Stock Baxuko Produktuak (< 10 unitate)</h3>
+                        <ul class="stat-zerrenda" id="stock-baxua"></ul>
+            </div>
 
+            <!-- Gehien salduak -->
+            <div class="stat-txartela">
+                <h3>Gehien Saldutako Produktuak</h3>
+                <ul class="stat-zerrenda" id="gehien-salduak"></ul>
+            </div>
 
+            <!-- Bezero onenak -->
+            <div class="stat-txartela">
+                <h3>Eskaera Gehien Egin Dituzten Bezeroak</h3>
+                <ul class="stat-zerrenda" id="bezero-onenak"></ul>
+            </div>
 
-            <div id="produktu-edukiontzia" class="produktu-sareta"></div>
-        </section>
+            <!-- Hileko irabaziak -->
+            <div class="stat-txartela">
+                <h3>Hileko Irabaziak</h3>
+                <ul class="stat-zerrenda" id="hileko-irabaziak"></ul>
+            </div>
+
+            <!-- Inoiz erosi ez direnak -->
+            <div class="stat-txartela">
+                <h3>Inoiz Erosi Ez Diren Produktuak</h3>
+                <ul class="stat-zerrenda" id="inoiz-erosiak"></ul>
+            </div>
+
+            <!-- 500€ baino gehiago -->
+            <div class="stat-txartela">
+                <h3>500€ Baino Gehiago Saldu Duten Produktuak</h3>
+                <ul class="stat-zerrenda" id="salmenta-altukoak"></ul>
+            </div>
+
+        </div>
     </main>
-    <script src="js/filtroa.js"></script>
+
     <footer>
         <div class="oin-edukia">
             <div class="oin-atala">
@@ -83,6 +115,8 @@
             <p>&copy; 2026 Indiusurbil. Eskubide guztiak erreserbatuta.</p>
         </div>
     </footer>
+
+    <script src="js/estadistikak.js"></script>
 </body>
 
 </html>

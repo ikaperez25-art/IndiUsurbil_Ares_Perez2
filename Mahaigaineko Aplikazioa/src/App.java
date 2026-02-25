@@ -19,6 +19,7 @@ public class App {
             System.out.println("5. Produktua bilatu");
             System.out.println("6. CSV-tik kargatu");
             System.out.println("7. JSON esportatu");
+            System.out.println("8. Irudiak eguneratu (URL)");
             System.out.println("0. Irten");
             System.out.print("Aukeratu: ");
             aukera = sc.nextInt();
@@ -45,6 +46,9 @@ public class App {
                     break;
                 case 7:
                     JsonEsportatzailea.esportatu();
+                    break;
+                case 8:
+                    DatuBasea.irudiakEguneratu();
                     break;
             }
         } while (aukera != 0);
