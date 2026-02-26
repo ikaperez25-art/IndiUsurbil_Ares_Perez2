@@ -2,8 +2,8 @@
   "irabazi_totala": 279.95,
   "gehien_salduak": [{"izena": "Kamiseta Berdea", "saldua": 2}, {"izena": "Praka Urdina", "saldua": 2}, {"izena": "Alkandora Zuria", "saldua": 1}, {"izena": "Jaka Beltza", "saldua": 1}],
   "bezero_onenak": [{"izena": "Ane Garcia", "eskaera_kop": 1}, {"izena": "Mikel Lopez", "eskaera_kop": 1}, {"izena": "Leire Martinez", "eskaera_kop": 1}],
-  "stock_baxua": [{"izena": "TEST", "stocka": 1}, {"izena": "TEST", "stocka": 1}, {"izena": "TEST", "stocka": 1}, {"izena": "TEST", "stocka": 1}],
+  "stock_baxua": [],
   "hileko_irabaziak": [{"data": "2026-2", "irabazia": 129.98}, {"data": "2026-1", "irabazia": 149.97}],
-  "inoiz_erosi_gabeak": ["Kamiseta Beltza", "Praka Grisa", "Sudadera Gorria", "Kamiseta jasangarria", "Praka Zirkularrak", "Sudadera organikoa", "TEST", "TEST", "TEST", "TEST"],
+  "inoiz_erosi_gabeak": ["Kamiseta Beltza", "Praka Grisa", "Sudadera Gorria", "Kamiseta jasangarria", "Praka Zirkularrak", "Sudadera organikoa", "Kamisa Cropped"],
   "salmenta_altukoak": []
 }
