@@ -2,9 +2,17 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-// Aplikazioaren menua
+/**
+ * Aplikazioaren menua kudeatzen duen klase nagusia.
+ */
 public class App {
 
+    /**
+     * Aplikazioaren metodo nagusia, menua bistaratu eta erabiltzailearen aukerak
+     * kudeatzen ditu.
+     * 
+     * @param args Komando-lerroko argumentuak
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
@@ -57,7 +65,9 @@ public class App {
         sc.close();
     }
 
-    // Produktu guztiak pantailaratu
+    /**
+     * Produktu guztiak datu-basetik lortu eta pantailan erakusten ditu.
+     */
     static void produktuakIkusi() {
         ArrayList<Produktua> lista = DatuBasea.produktuGuztiak();
         System.out.println("\nID | Izena | Prezioa | Stocka | Kategoria");
@@ -68,7 +78,12 @@ public class App {
         }
     }
 
-    // Produktu berria gehitu
+    /**
+     * Erabiltzaileari datuak eskatzen dizkio eta produktu berri bat gehitzen du
+     * datu-basean.
+     * 
+     * @param sc Scanner objektua teklatutik datuak irakurtzeko
+     */
     static void produktuaGehitu(Scanner sc) {
         Produktua p = new Produktua();
         System.out.print("Izena: ");
@@ -88,7 +103,12 @@ public class App {
         DatuBasea.gehitu(p);
     }
 
-    // Produktua eguneratu
+    /**
+     * Produktu baten datuak eguneratzen ditu erabiltzaileak emandako
+     * informazioarekin.
+     * 
+     * @param sc Scanner objektua teklatutik datuak irakurtzeko
+     */
     static void produktuaEguneratu(Scanner sc) {
         produktuakIkusi();
         System.out.print("\nEguneratu nahi duzun produktuaren ID: ");
@@ -111,7 +131,11 @@ public class App {
         DatuBasea.eguneratu(id, p);
     }
 
-    // Produktua ezabatu
+    /**
+     * Produktu bat bere ID-aren arabera datu-basetik ezabatzen du.
+     * 
+     * @param sc Scanner objektua teklatutik datuak irakurtzeko
+     */
     static void produktuaEzabatu(Scanner sc) {
         produktuakIkusi();
         System.out.print("\nEzabatu nahi duzun produktuaren ID: ");
@@ -119,7 +143,12 @@ public class App {
         DatuBasea.ezabatu(id);
     }
 
-    // Produktua bilatu
+    /**
+     * Produktuak bilatzen ditu datu-basean izenaren edo deskribapenaren arabera,
+     * eta emaitzak bistaratzen ditu.
+     * 
+     * @param sc Scanner objektua teklatutik datuak irakurtzeko
+     */
     static void produktuaBilatu(Scanner sc) {
         System.out.print("Bilatu (izena edo deskribapena): ");
         String bilaketa = sc.nextLine();
@@ -133,7 +162,11 @@ public class App {
         }
     }
 
-    // CSV-tik kargatu
+    /**
+     * Produktuak CSV fitxategi batetik kargatzen ditu datu-basean.
+     * 
+     * @param sc Scanner objektua fitxategiaren bidea irakurtzeko
+     */
     static void csvKargatu(Scanner sc) {
         System.out.print("CSV fitxategiaren bidea: ");
         String bidea = sc.nextLine();

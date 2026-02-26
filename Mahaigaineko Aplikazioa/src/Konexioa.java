@@ -4,12 +4,26 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Properties;
 
+/**
+ * Datu-baserako konexioa kudeatzeko ardura duen klasea.
+ * MySQL datu-basera konektatzeko beharrezkoak diren driver-aren karga eta
+ * kredentzialak kudeatzen ditu.
+ */
 public class Konexioa {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/indiusurbil?serverTimezone=UTC";
     private static final String ERABILTZAILEA = "root";
     private static final String PASAHITZA = "gabrielito10";
     private static Driver mysqlDriver = null;
 
+    /**
+     * MySQL datu-basera konexio bat lortzen du.
+     * Lehenik classpath-ean bilatzen du driver-a, eta aurkitzen ez badu, emandako
+     * bideetan
+     * dagoen JAR fitxategitik zuzenean kargatzen saiatzen da.
+     * 
+     * @return Datu-baserako Connection objektua
+     * @throws SQLException Konexioa egiterakoan edota driver-a ez bada aurkitzen
+     */
     public static Connection getKonexioa() throws SQLException {
         // Classpath-etik probatu lehenik
         try {

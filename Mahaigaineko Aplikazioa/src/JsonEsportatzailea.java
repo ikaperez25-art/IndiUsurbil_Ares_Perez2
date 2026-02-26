@@ -2,12 +2,21 @@ import java.sql.*;
 import java.io.*;
 import java.util.ArrayList;
 
-// JSON fitxategiak sortzeko klasea (weberako)
+/**
+ * Weberako JSON fitxategiak sortzen eta esportatzen dituen klasea.
+ * Datu-baserako kontsultak egiten ditu eta emaitzak JSON testu fitxategi gisa
+ * gordetzen ditu.
+ */
 public class JsonEsportatzailea {
 
     static String karpeta = aurkituKarpeta();
 
-    // Karpeta zuzena bilatu
+    /**
+     * Proiektuaren egituraren arabera JSON fitxategiak gorde behar diren
+     * direktorio zuzena bilatzen eta itzultzen du.
+     * 
+     * @return JSON fitxategiak gordetzeko karpetaren bidea
+     */
     static String aurkituKarpeta() {
         String[] bideak = {
                 "web/htdocs/json/",
@@ -22,7 +31,10 @@ public class JsonEsportatzailea {
         return "web/htdocs/json/";
     }
 
-    // Metodo nagusia: dena esportatu
+    /**
+     * Datu guztiak JSON fitxategi ezberdinetan esportatzeko prozesu bideratzailea
+     * da.
+     */
     public static void esportatu() {
         new File(karpeta).mkdirs();
         System.out.println("JSON-ak hemen gordetzen: " + new File(karpeta).getAbsolutePath());
@@ -30,7 +42,10 @@ public class JsonEsportatzailea {
         esportatuEstadistikak();
     }
 
-    // produktuak.json fitxategia sortu
+    /**
+     * Produktu guztien informazioa lortu eta 'produktuak.json' fitxategia sortzen
+     * du.
+     */
     static void esportatuProduktuak() {
         ArrayList<Produktua> produktuak = DatuBasea.produktuGuztiak();
 
@@ -64,7 +79,12 @@ public class JsonEsportatzailea {
         }
     }
 
-    // estadistikak.json fitxategia sortu
+    /**
+     * Datu-baseko hainbat estatistika bildu eta 'estadistikak.json' fitxategia
+     * sortzen du.
+     * Datu horien barruan sartu dira irabazi totala, salduenak diren produktuak eta
+     * bezero onenak, besteak beste.
+     */
     static void esportatuEstadistikak() {
         try {
             Connection con = Konexioa.getKonexioa();

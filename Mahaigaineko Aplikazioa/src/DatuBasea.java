@@ -2,10 +2,19 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.io.*;
 
-// Datu basearekin lan egiteko funtzioak
+/**
+ * Datu-basearekin komunikatzeko ardura duen klasea.
+ * CRUD eragiketak (Sortu, Irakurri, Eguneratu, Ezabatu) eta bestelako funtzio
+ * aurreratuak kudeatzen ditu.
+ */
 public class DatuBasea {
 
-    // Produktu guztiak lortu
+    /**
+     * Datu-basean dauden produktu guztiak lortzen ditu.
+     * Kategoriari buruzko informazioa ere gehitzen zaio produktu bakoitzari.
+     * 
+     * @return Produktu guztien ArrayList bat
+     */
     public static ArrayList<Produktua> produktuGuztiak() {
         ArrayList<Produktua> lista = new ArrayList<>();
         try {
@@ -38,7 +47,11 @@ public class DatuBasea {
         return lista;
     }
 
-    // Produktu bat gehitu
+    /**
+     * Produktu berri bat gehitzen du datu-basean.
+     * 
+     * @param p Gehitu beharreko Produktua objektua
+     */
     public static void gehitu(Produktua p) {
         try {
             Connection con = Konexioa.getKonexioa();
@@ -60,7 +73,13 @@ public class DatuBasea {
         }
     }
 
-    // Produktu bat eguneratu
+    /**
+     * Produktu baten datuak eguneratzen ditu datu-basean bere ID-a erabiliz.
+     * 
+     * @param id Eguneratu nahi den produktuaren identifikatzailea
+     * @param p  Eguneraketarako erabiliko den informazio berria duen Produktua
+     *           objektua
+     */
     public static void eguneratu(int id, Produktua p) {
         try {
             Connection con = Konexioa.getKonexioa();
@@ -83,7 +102,11 @@ public class DatuBasea {
         }
     }
 
-    // Produktu bat ezabatu
+    /**
+     * Produktu bat bere ID-aren arabera datu-basetik ezabatzen du.
+     * 
+     * @param id Ezabatu nahi den produktuaren identifikatzailea
+     */
     public static void ezabatu(int id) {
         try {
             Connection con = Konexioa.getKonexioa();
@@ -99,7 +122,13 @@ public class DatuBasea {
         }
     }
 
-    // Produktuak bilatu
+    /**
+     * Izenaren edo deskribapenaren zati bat erabiliz bat datozen produktuak
+     * bilatzen ditu.
+     * 
+     * @param bilaketa Bilaketa hitza edo esaldia
+     * @return Bilaketarekin bat datozen produktuen ArrayList bat
+     */
     public static ArrayList<Produktua> bilatu(String bilaketa) {
         ArrayList<Produktua> lista = new ArrayList<>();
         try {
@@ -135,7 +164,12 @@ public class DatuBasea {
         return lista;
     }
 
-    // CSV fitxategitik kargatu
+    /**
+     * CSV formatuan dagoen fitxategi bateko produktuak ikusi eta datu-basean
+     * gordetzen ditu.
+     * 
+     * @param bidea CSV fitxategiaren bidea kokapena adierazten duena
+     */
     public static void csvKargatu(String bidea) {
         try {
             Connection con = Konexioa.getKonexioa();
@@ -167,7 +201,9 @@ public class DatuBasea {
         }
     }
 
-    // Irudiak eguneratu (URL-ekin)
+    /**
+     * Produktuen irudiak eguneratzen ditu URL zehatz batzuetara (proba gisa).
+     */
     public static void irudiakEguneratu() {
         String[][] irudiak = {
                 { "1", "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400" },
