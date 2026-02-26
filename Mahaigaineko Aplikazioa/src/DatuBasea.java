@@ -2,6 +2,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.io.*;
 
+/*
+ * BIRFAKTORIZAZIOA EGINDA:
+ * "Atera metodo bat" teknika erabili da. `produktuGuztiak` eta `bilatu` 
+ * metodoetan ResultSet-etik Produktua objektua sortzeko prozesua guztiz bikoiztua zegoen. 
+ * Hori "kode usain txarra" bat da, beraz `sortuProduktua(ResultSet rs)` 
+ * metodo berria atera da kodea sinplifikatu eta leku bakar batean zentralizatzeko.
+ */
+
 /**
  * Datu-basearekin komunikatzeko ardura duen klasea.
  * CRUD eragiketak (Sortu, Irakurri, Eguneratu, Ezabatu) eta bestelako funtzio
@@ -27,16 +35,7 @@ public class DatuBasea {
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                Produktua p = new Produktua();
-                p.id = rs.getInt("id");
-                p.izena = rs.getString("izena");
-                p.deskribapena = rs.getString("deskribapena");
-                p.prezioa = rs.getDouble("prezioa");
-                p.stocka = rs.getInt("stocka");
-                p.irudia = rs.getString("irudia");
-                p.kategoriaId = rs.getInt("kategoria_id");
-                p.kategoriaIzena = rs.getString("kategoria");
-                lista.add(p);
+                lista.add(sortuProduktua(rs));
             }
             rs.close();
             st.close();
@@ -144,16 +143,7 @@ public class DatuBasea {
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-                Produktua p = new Produktua();
-                p.id = rs.getInt("id");
-                p.izena = rs.getString("izena");
-                p.deskribapena = rs.getString("deskribapena");
-                p.prezioa = rs.getDouble("prezioa");
-                p.stocka = rs.getInt("stocka");
-                p.irudia = rs.getString("irudia");
-                p.kategoriaId = rs.getInt("kategoria_id");
-                p.kategoriaIzena = rs.getString("kategoria");
-                lista.add(p);
+                lista.add(sortuProduktua(rs));
             }
             rs.close();
             pst.close();
@@ -228,5 +218,26 @@ public class DatuBasea {
         } catch (SQLException e) {
             System.out.println("Errorea: " + e.getMessage());
         }
+    }
+
+    /**
+     * ResultSet batetik Produktua objektua sortzen duen laguntza-metodoa.
+     * Kode bikoiztua saihesteko atera da (Birfaktorizazioa - Atera metodo bat).
+     * 
+     * @param rs Datu-baseko emaitza bat duen ResultSet-a
+     * @return Produktua objektua betearekin
+     * @throws SQLException baldin eta irakurketan arazoren bat badago
+     */
+    private static Produktua sortuProduktua(ResultSet rs) throws SQLException {
+        Produktua p = new Produktua();
+        p.id = rs.getInt("id");
+        p.izena = rs.getString("izena");
+        p.deskribapena = rs.getString("deskribapena");
+        p.prezioa = rs.getDouble("prezioa");
+        p.stocka = rs.getInt("stocka");
+        p.irudia = rs.getString("irudia");
+        p.kategoriaId = rs.getInt("kategoria_id");
+        p.kategoriaIzena = rs.getString("kategoria");
+        return p;
     }
 }

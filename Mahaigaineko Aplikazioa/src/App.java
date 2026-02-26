@@ -2,6 +2,15 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
+/*
+ * BIRFAKTORIZAZIOA EGINDA:
+ * "Atera metodo bat" teknika erabili da. `produktuakIkusi` eta `produktuaBilatu` 
+ * metodoetan kode bikoiztua (kode usain txarra) zegoen produktuak pantailaratzeko. 
+ * Funtzionalitate hori logikoki isolatu eta metodo berri batera atera da: 
+ * `produktuListaBistaratu(ArrayList<Produktua> lista)`.
+ * Honela, kode bikoiztua txikitzen da eta irakurketa/mantentzea errazagoa da.
+ */
+
 /**
  * Aplikazioaren menua kudeatzen duen klase nagusia.
  */
@@ -70,12 +79,7 @@ public class App {
      */
     static void produktuakIkusi() {
         ArrayList<Produktua> lista = DatuBasea.produktuGuztiak();
-        System.out.println("\nID | Izena | Prezioa | Stocka | Kategoria");
-        System.out.println("-------------------------------------------");
-        for (Produktua p : lista) {
-            System.out.println(
-                    p.id + " | " + p.izena + " | " + p.prezioa + "€ | " + p.stocka + " | " + p.kategoriaIzena);
-        }
+        produktuListaBistaratu(lista);
     }
 
     /**
@@ -154,6 +158,17 @@ public class App {
         String bilaketa = sc.nextLine();
 
         ArrayList<Produktua> lista = DatuBasea.bilatu(bilaketa);
+        produktuListaBistaratu(lista);
+    }
+
+    /**
+     * Produktuen zerrenda bat pantailan formatu egokian erakusten du.
+     * Kode bikoiztua saihesteko atera den metodoa (Birfaktorizazioa - Atera metodo
+     * bat).
+     * 
+     * @param lista Erakutsiko diren produktuen lista
+     */
+    static void produktuListaBistaratu(ArrayList<Produktua> lista) {
         System.out.println("\nID | Izena | Prezioa | Stocka | Kategoria");
         System.out.println("-------------------------------------------");
         for (Produktua p : lista) {
