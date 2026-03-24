@@ -92,19 +92,58 @@ public class App {
         Produktua p = new Produktua();
         System.out.print("Izena: ");
         p.izena = sc.nextLine();
+        if (p.izena == null || p.izena.trim().isEmpty()) {
+            System.out.println("ER1: Izenak ezin du hutsik egon");
+            return;
+        }
+
         System.out.print("Deskribapena: ");
         p.deskribapena = sc.nextLine();
+
         System.out.print("Prezioa: ");
+        if (!sc.hasNextDouble()) {
+            System.out.println("ER2: Prezioak zenbakia izan behar du");
+            sc.nextLine(); // Scanner buffera garbitu
+            return;
+        }
         p.prezioa = sc.nextDouble();
+        if (p.prezioa <= 0) {
+            System.out.println("ER2: Prezioak positiboa izan behar du");
+            sc.nextLine();
+            return;
+        }
+
         System.out.print("Stocka: ");
+        if (!sc.hasNextInt()) {
+            System.out.println("ER5: Stockak zenbakia izan behar du");
+            sc.nextLine();
+            return;
+        }
         p.stocka = sc.nextInt();
-        sc.nextLine();
+        sc.nextLine(); // Bufferreko \n-a garbitu
+
+        if (p.stocka < 0) {
+            System.out.println("ER3: Stocka ezin da negatiboa izan");
+            return;
+        }
+
         System.out.print("Irudia URL: ");
         p.irudia = sc.nextLine();
+
         System.out.print("Kategoria ID (1-Kamisetak, 2-Prakak, 3-Alkandorak, 4-Sudaderak, 5-Jakak): ");
+        if (!sc.hasNextInt()) {
+            System.out.println("ER4: Kategoria ezin da hutsik egon");
+            sc.nextLine();
+            return;
+        }
         p.kategoriaId = sc.nextInt();
+        if (p.kategoriaId < 1 || p.kategoriaId > 5) {
+            System.out.println("ER4: Kategoria ez da existitzen");
+            return;
+        }
 
         DatuBasea.gehitu(p);
+        System.out.println("Produktua sortu da");
     }
 
     /**
