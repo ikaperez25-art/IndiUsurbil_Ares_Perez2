@@ -102,13 +102,13 @@ public class AppTest {
     // --- MENU NAGUSIKO PROBAK (CPM1, CPM2, CPM3, CPM4) ---
 
     private void exekutatuMain(String sarrera, Runnable u) {
-        java.io.InputStream sysInBackup = System.in; // Backup
+        java.io.InputStream sysInBackup = System.in;
         try {
             ByteArrayInputStream in = new ByteArrayInputStream(sarrera.getBytes());
             System.setIn(in);
             u.run();
         } finally {
-            System.setIn(sysInBackup); // Restore
+            System.setIn(sysInBackup);
         }
     }
 
@@ -125,7 +125,6 @@ public class AppTest {
         assertDoesNotThrow(() -> {
             exekutatuMain("9\n0\n", () -> App.main(new String[0]));
         });
-        // Bucle normal
     }
 
     @Test
